@@ -6,22 +6,22 @@
     Try changing "table" to "view" below
 */
 {{ config(
-  materialized = 'ephemeral'
+  materialized = 'table'
 ) }}
 
 WITH source_data AS (
 
   SELECT
-    1 AS id
+    1 AS id,
+    'Jason' AS first_name,
+    'Sooter' AS last_name
   UNION ALL
   SELECT
-    NULL AS id
+    2 AS id,
+    'Someone' AS first_name,
+    'Else' AS last_name
 )
 SELECT
   *
 FROM
   source_data
-  /*
-        Uncomment the line below to remove records with null `id` values
-    */
-  -- where id is not null
