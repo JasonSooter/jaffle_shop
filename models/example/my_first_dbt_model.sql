@@ -6,7 +6,7 @@
     Try changing "table" to "view" below
 */
 {{ config(
-  materialized = 'table'
+  materialized = 'ephemeral'
 ) }}
 
 WITH source_data AS (
